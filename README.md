@@ -8,7 +8,8 @@ in silico identification and deconvolution of scRNA doublets
 
 ## relevant reading
 ### Kang Nat Biotech 2018 Demuxlet
-"harnesses genetic variation to determine the geneitc identity of each droplet... and identify driples containing cells from differenet individuals".  *made a module, runs fine*
+"harnesses genetic variation to determine the geneitc identity of each droplet... and identify driples containing cells from differenet individuals".  
+  *made a module, runs fine*
 
 
 ###  Zheng Nature Comms 2016
