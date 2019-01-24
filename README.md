@@ -45,11 +45,11 @@ ML (SVM) for low qual, can ID multiples but is dependent on "closeness" to train
 
 # questions
 1) Are there more intelligent ways to identify doublets
-⋅⋅* probably not by me- all the buzzwords have been used
-⋅⋅* however semisupervised using model based on similarity scores to things like scmca maybe
+  * probably not by me- all the buzzwords have been used
+  * however semisupervised using model based on similarity scores to things like scmca maybe
 
 2) Can we distinguish in situ doublets from accidental doublets
-⋅⋅* based on cellphone interactivity score maybe
+  * based on cellphone interactivity score maybe
 3) Can we use in-situ doublets to artifically reconstruct a spatial map
-⋅⋅* Probably some awful hidden markoff model based on 2
+  * Probably some awful hidden markoff model based on 2
 
