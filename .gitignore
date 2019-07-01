@@ -1,0 +1,5 @@
+# images/**
+# rdata/**
+*ai
+*rdata
+!cell.cyclegenes
