@@ -1,7 +1,7 @@
 # whenCellsBeFriends
 in silico identification and deconvolution of scRNA doublets
 
-##comments
+## comments
 * This is a mix of things, dont freak out, there should be a master process below
 * Rationalised R functions in /R Recently updated for Seurat3,
 * related to github.com/briglo/scFuncs
@@ -26,6 +26,27 @@ integrated<-makeMetaScore(integrated,markers$markers$gene[1:50])
 ggplot(integrated@meta.data,aes(x=UMAP_1,y=UMAP_2,color=metascore)) + geom_point(alpha=.5) + scale_colour_gradientn(colours = jet.colors(7))
 ```
 
+# questions
+1) Are there more intelligent ways to identify doublets
+  * probably not by me- all the buzzwords have been used
+  * however semisupervised using model based on similarity scores to things like scmca maybe
+
+2) Can we distinguish in situ doublets from accidental doublets
+  * based on cellphone interactivity score maybe
+3) Can we use in-situ doublets to artifically reconstruct a spatial map
+  * Probably some awful hidden markoff model based on 2
+
+  # plan
+  1) Try to get allele aware count data (start with Kang et al- should be an intermediate step of demuxlet)
+  2) Run demuxlet and scrublet over current data
+  3) Compare each output to known inputs and intersect
+
+   image: ![] (images/justification.png)
+
+# speculation
+  1) Intersection demuxlet and scrublet should yield accidental duplicates (demux only), falsly "interacting" duplicates (both) and possible interactors(scrublet only)
+  2) These may give insight as to the determinants of cell- interactions that are retained through fluidics (and my guess is that solid tissue based libraries should have a higher proportion of interactors)
+3) Wonder if cluster based might be the way to go? (define clusters of interest, use teichman to ID dups between them, extract bam, run freebayes ahh i might have hit my glucose intake for the day) for future application in an unknown space... would shoehorn better in to existing pipelines.
 
 
 # background
@@ -71,27 +92,3 @@ ML (SVM) for low qual, can ID multiples but is dependent on "closeness" to train
 
 
 
-# questions
-1) Are there more intelligent ways to identify doublets
-  * probably not by me- all the buzzwords have been used
-  * however semisupervised using model based on similarity scores to things like scmca maybe
-
-2) Can we distinguish in situ doublets from accidental doublets
-  * based on cellphone interactivity score maybe
-3) Can we use in-situ doublets to artifically reconstruct a spatial map
-  * Probably some awful hidden markoff model based on 2
-
-  # plan
-  a) Try to get allele aware count data (start with Kang et al- should be an intermediate step of demuxlet)
-  b) Run demuxlet and scrublet over current data
-  c) Compare each output to known inputs and intersect
-
-  #issues/comments
-  1) scrublet example works on filtered cellranger (need to make sure filtering doesnt kill possible doublets, unfiltered is killing my computer)
-  2) i dont *get* python... 
-  
-
-  #speculation
-  1) Intersection demuxlet and scrublet should yield accidental duplicates (demux only), falsly "interacting" duplicates (both) and possible interactors(scrublet only)
-  2) These may give insight as to the determinants of cell- interactions that are retained through fluidics (and my guess is that solid tissue based libraries should have a higher proportion of interactors)
-3) Wonder if cluster based might be the way to go? (define clusters of interest, use teichman to ID dups between them, extract bam, run freebayes ahh i might have hit my glucose intake for the day) for future application in an unknown space... would shoehorn better in to existing pipelines.
