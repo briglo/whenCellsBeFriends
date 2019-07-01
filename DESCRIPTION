@@ -1,0 +1,14 @@
+Package: whenCellsBeFriends
+Title: Hopefully a formalization of what ive done with doublets
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "brian",
+           family = "gloss",
+           role = c("aut", "cre"),
+           email = "brian.s.gloss@gmail.com",
+           comment = c(ORCID = "https://orcid.org/0000-0001-7695-4394"))
+Description: Hopefully a formalization of what ive done with doublets
+License: I like GNU
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
