@@ -41,7 +41,7 @@ ggplot(integrated@meta.data,aes(x=UMAP_1,y=UMAP_2,color=metascore)) + geom_point
   2) Run demuxlet and scrublet over current data
   3) Compare each output to known inputs and intersect
 
-   image: ![] (https://github.com/briglo/whenCellsBeFriends/blob/master/images/190509_justification.png)
+![justification](https://github.com/briglo/whenCellsBeFriends/blob/master/images/190509_justification.png)
 
 # speculation
   1) Intersection demuxlet and scrublet should yield accidental duplicates (demux only), falsly "interacting" duplicates (both) and possible interactors(scrublet only)
